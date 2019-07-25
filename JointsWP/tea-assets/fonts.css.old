@@ -1,0 +1,59 @@
+@font-face {
+	font-family: 'Tisa';
+	src: url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa.eot');
+	src: url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa.eot?#iefix') format('embedded-opentype'),
+		url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa.woff') format('woff'),
+		url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa.ttf') format('truetype');
+	font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'Tisa Medium';
+	src: url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa-Medium.eot');
+	src: url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa-Medium.eot?#iefix') format('embedded-opentype'),
+		url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa-Medium.woff') format('woff'),
+		url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa-Medium.ttf') format('truetype');
+	font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'Tisa Sans';
+	src: url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans.eot');
+	src: url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans.eot?#iefix') format('embedded-opentype'),
+		url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans.woff') format('woff'),
+		url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans.ttf') format('truetype');
+	font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'Tisa Sans Bold';
+	src: url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Bold.eot');
+	src: url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Bold.eot?#iefix') format('embedded-opentype'),
+		url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Bold.woff') format('woff'),
+		url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Bold.ttf') format('truetype');
+	font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'Tisa Sans Medium';
+	src: url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Medium.eot');
+	src: url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Medium.eot?#iefix') format('embedded-opentype'),
+		url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Medium.woff') format('woff'),
+		url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Medium.ttf') format('truetype');
+	font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'Tisa Sans SC Medium';
+	src: url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSansSc-Medium.eot');
+	src: url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSansSc-Medium.eot?#iefix') format('embedded-opentype'),
+		url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSansSc-Medium.woff') format('woff'),
+		url('http://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSansSc-Medium.ttf') format('truetype');
+	font-weight: normal;
+    font-style: normal;
+}

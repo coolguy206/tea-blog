@@ -1,0 +1,3069 @@
+@charset "UTF-8";
+/*
+Please make all changes into the scss files, do not modify css
+as it will be overwritten by SASS.
+
+This is the base document for any site, please if you are
+fixing any bug, leave a little comment on the section you are
+modifying to help future developers understand what you are doing.
+Example: flopez1: changed $main-color-1 to #fff, this helps to override any default color to white.
+*/
+/* ------- Custom @mixins  ------- */
+/*doc
+---
+title: Colors
+name: Colors
+category: base
+---
+
+Colors that can be applied to background color or font colors.
+Avalible colors:
+Main colors
+
+pc-main1
+pc-main2
+bc-main1
+bc-main2
+
+pc-1 to pc-11
+bc-1 to bc-11
+
+Usage:
+
+```html_example
+<p class="pc-1">Font Color 1</p>
+<p class="bc-5">Background - Color 5</p>
+
+```
+*/
+/* font colors */
+@font-face {
+  font-family: 'Tisa';
+  src: url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa.eot");
+  src: url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa.eot?#iefix") format("embedded-opentype"), url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa.woff") format("woff"), url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Tisa Medium';
+  src: url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa-Medium.eot");
+  src: url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa-Medium.eot?#iefix") format("embedded-opentype"), url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa-Medium.woff") format("woff"), url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/Tisa-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Tisa Sans';
+  src: url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans.eot");
+  src: url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans.eot?#iefix") format("embedded-opentype"), url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans.woff") format("woff"), url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Tisa Sans Bold';
+  src: url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Bold.eot");
+  src: url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Bold.eot?#iefix") format("embedded-opentype"), url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Bold.woff") format("woff"), url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Tisa Sans Medium';
+  src: url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Medium.eot");
+  src: url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Medium.eot?#iefix") format("embedded-opentype"), url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Medium.woff") format("woff"), url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSans-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Tisa Sans SC Medium';
+  src: url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSansSc-Medium.eot");
+  src: url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSansSc-Medium.eot?#iefix") format("embedded-opentype"), url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSansSc-Medium.woff") format("woff"), url("https://blog.teacollection.com/wp-content/themes/JointsWP/tea-assets/tisa/TisaSansSc-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/*--- Base --- */
+/* Basic Structure */
+body {
+  margin: 0;
+  padding: 0;
+  color: #9b8b81;
+  font-family: "Tisa", Arial, Helvetica, sans-serif;
+  background: #fff;
+}
+
+/* Misc */
+/*doc
+---
+
+title: display
+name: display
+category: base
+---
+
+Set the display for all html elements
+
+Usage:
+
+```html_example
+
+   <div class="inline">Set inline display</div>
+   <a class="block">Set block display</a>
+
+```
+*/
+.inline {
+  display: inline-block !important;
+}
+
+.block {
+  display: block !important;
+}
+
+/*doc
+---
+title: shadow
+name: shadow
+category: Tools
+---
+
+Set a shadow for elements
+
+Usage:
+
+```html_example
+
+   <div class="dark-shadowbox">Set dark shadowbox</div>
+   <div class="pale-shadowbox">Set pale shadowbox</div>
+
+```
+*/
+.dark-shadowbox {
+  -webkit-box-shadow: 0.0625rem 0.125rem 0.25rem 0.0625rem rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0.0625rem 0.125rem 0.25rem 0.0625rem rgba(0, 0, 0, 0.75);
+  box-shadow: 0.0625rem 0.125rem 0.25rem 0.0625rem rgba(0, 0, 0, 0.75);
+  border-collapse: separate;
+}
+
+.pale-shadowbox {
+  -webkit-box-shadow: 0.0625rem 0.125rem 0.25rem 0.0625rem rgba(204, 204, 204, 0.75);
+  -moz-box-shadow: 0.0625rem 0.125rem 0.25rem 0.0625rem rgba(204, 204, 204, 0.75);
+  box-shadow: 0.0625rem 0.125rem 0.25rem 0.0625rem rgba(204, 204, 204, 0.75);
+  border-collapse: separate;
+}
+
+/* IE fix *ie.css only not working* */
+@media screen and (min-width: 0\0) {
+  .dark-shadowbox {
+    box-shadow: 0 0 0.94rem #000;
+  }
+
+  .pale-shadowbox {
+    box-shadow: 0 0 0.94rem #ccc;
+  }
+}
+/*doc
+---
+title: position
+name: position
+category: Tools
+---
+
+Set specific elements as relative for positioning elements
+
+Usage:
+
+```html_example
+   <p>Div is positioned as relative</p>
+   <div class="relative">
+      <a href="#" class="absolute">Link is positioned as absolute</a>
+   </div>
+
+```
+*/
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+/*
+Set default size for text elements
+*/
+p, a, .button-to-link, li, span, td {
+  font-size: 0.75rem;
+  /* 12px */
+  line-height: 1rem;
+  /* 16px */
+}
+
+/*doc
+---
+title: font-styling
+name: font-styling
+category: Tools
+---
+
+Set the font-styles for elements
+
+Usage:
+
+```html_example
+   <p class="strong">Strong</p>
+   <p class="italic">Italic</p>
+   <p class="normal">Force Normal</p>
+   <p class="line-through">Line through</p>
+   <p class="lower-text">Lower Text</p>
+   <p class="capitalize-text">capitalize text</p>
+
+```
+*/
+.strong {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.normal {
+  font-weight: normal !important;
+  font-style: normal;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.lower-text {
+  text-transform: lowercase !important;
+}
+
+.capitalize-text {
+  text-transform: capitalize !important;
+}
+
+.breadcrumbs > * {
+  text-transform: none;
+}
+
+/*doc
+---
+title: Margins and Paddings
+name: Margins and Paddings
+category: Tools
+---
+You can set the margin and/or padding of an element by adding this class,
+this classes are generated on sara_settings on foundation folder
+
+Available sizes:
+from 0 to 30
+
+You can use merged paddings or margins with (m/p)(t/b/l/r)
+
+
+Also you can use the prefix {small, medium or large} if you want to add
+margin or padding only specific devices.
+
+
+Usage:
+
+```html_example
+<p class="ml30 bc-1">Margin left 30</p>
+<p class="pt20 pl20 bc-2">padding top and left 20</p>
+
+<p class="ptb30">padding top and bottom 30</p>
+<p class="small-ptb30">padding top and bottom 30 only mobile</p>
+
+```
+*/
+/*doc
+---
+title: Font-Sizing
+name: Font-Sizing
+category: Tools
+---
+You can set the font-size of an element by adding this class,
+this classes are generated on sara_settings on foundation folder
+
+Available sizes:
+from 10 to 30
+
+Usage:
+
+```html_example
+<p class="fsz10">Font size 10</p>
+<p class="fsz30">Font size 40</p>
+```
+*/
+/* forms */
+input[type="text"], input[type="password"], input[type="date"],
+input[type="datetime"], input[type="datetime-local"],
+input[type="month"], input[type="week"], input[type="email"],
+input[type="number"], input[type="search"], input[type="tel"],
+input[type="time"], input[type="url"], textarea, select, input {
+  box-shadow: none;
+}
+
+input[type="text"], input[type="password"], input[type="email"],
+input[type="number"], input[type="search"], input[type="tel"] {
+  height: 1.625rem;
+}
+
+input[type="submit"], input[type="button"] {
+  border: none;
+}
+
+input[type="checkbox"] + label, input[type="radio"] + label,
+input[type="checkbox"] + span, input[type="radio"] + span {
+  font-size: 0.75rem;
+  vertical-align: middle;
+  max-width: 89%;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  margin: 0 !important;
+}
+
+select {
+  padding: 3px 5px;
+}
+select.quarter {
+  width: 25% !important;
+}
+select.half {
+  width: 50%;
+}
+select.three-quarters {
+  width: 75%;
+}
+select.full {
+  width: 100%;
+}
+
+/*doc
+---
+title: button to link
+name: button to link
+category: Tools
+---
+
+Change a button display to look like a link
+
+Usage:
+
+```html_example
+<button class="button-to-link">Button</button>
+<input type="button" class="button-to-link" value="Button">
+```
+*/
+.button-to-link {
+  background-color: transparent;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+/*doc
+---
+title: error messages
+name: error messages
+category: Tools
+---
+
+Class to add color for error message displays
+
+Usage:
+
+```html_example
+<p class="error-message">Error message</p>
+```
+*/
+.error-message {
+  color: #ff0033;
+}
+
+.error-input {
+  border: 1px solid #ff0033;
+}
+
+/*doc
+---
+title: Images
+name: Images
+category: Tools
+---
+
+Image positioning & sizing
+
+Usage:
+
+```html_example
+<img src="http://www.mycatspace.com/wp-content/uploads/2013/08/adopting-a-cat.jpg" alt="Cat" class="x-small-sz block">
+<img src="http://www.mycatspace.com/wp-content/uploads/2013/08/adopting-a-cat.jpg" alt="Cat" class="small-sz block">
+<img src="http://www.mycatspace.com/wp-content/uploads/2013/08/adopting-a-cat.jpg" alt="Cat" class="medium-sz block">
+<img src="http://www.mycatspace.com/wp-content/uploads/2013/08/adopting-a-cat.jpg" alt="Cat" class="large-sz block">
+```
+*/
+img.center {
+  vertical-align: middle;
+}
+
+img.horizontal-center {
+  display: block;
+  margin: 0 auto;
+}
+
+/* 20px X 20px */
+img.picker-sz {
+  max-width: 1.25rem !important;
+  height: 1.25rem !important;
+}
+
+/* 68px X 68px */
+img.x-small-sz {
+  width: 4.25rem;
+  max-width: 4.25rem !important;
+}
+
+/* 136px X 136px */
+img.small-sz {
+  width: 8.5rem;
+  max-width: 8.5rem !important;
+}
+
+/* 173px X 173px */
+img.medium-sz {
+  width: 10.81rem;
+  max-width: 10.81rem !important;
+}
+
+/* 500px X 500px */
+img.large-sz {
+  width: 31.25rem;
+  max-width: 31.25rem !important;
+}
+
+/*doc
+---
+title: Pagination
+name: Pagination
+category: Tools
+---
+
+Pagination styles, this uses some of the foundation classes and js so it wont work correctly here, just posting example html
+
+Usage:
+
+```html_example
+<ul class="pagination">
+  <li class="arrow unavailable"><a href="">&laquo;</a></li>
+  <li class="current"><a href="">1</a></li>
+  <li><a href="">2</a></li>
+  <li><a href="">3</a></li>
+  <li><a href="">4</a></li>
+  <li class="unavailable"><a href="">&hellip;</a></li>
+  <li><a href="">12</a></li>
+  <li><a href="">13</a></li>
+  <li class="arrow"><a href="">&raquo;</a></li>
+</ul>
+```
+*/
+/* Placeholder color */
+::-webkit-input-placeholder {
+  color: #816b5b;
+}
+
+:-moz-placeholder {
+  color: #816b5b;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  color: #816b5b;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #816b5b;
+}
+
+/* For Medium Only */
+@media only screen and (max-width: 64rem) {
+  /* Image sizing */
+  /* 299px X 299px */
+  img.large-sz {
+    width: 18.69rem;
+    max-width: 18.69rem !important;
+  }
+}
+/* For Small Only */
+@media only screen and (max-width: 47.94rem) {
+  /* Image sizing */
+  /* 122px X 122px */
+  img.small-sz {
+    width: 7.625rem;
+    max-width: 7.625rem !important;
+  }
+
+  /* 304px X 304px */
+  img.large-sz {
+    width: 19rem;
+    max-width: 19rem !important;
+  }
+}
+/*doc
+---
+title: print version
+name: print version
+category: Tools
+---
+
+Use this classes to control what we print or not
+
+Usage:
+
+```html_example
+<p class="print-this">This will be printed</p>
+<p class="dont-print">This won't be printed</p>
+```
+*/
+@media print {
+  .dont-print {
+    display: none !important;
+  }
+
+  .print-this {
+    display: block;
+  }
+
+  a[href]:after, [href].button-to-link:after {
+    content: none !important;
+  }
+}
+@media print and (color) {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+/* >>Base */
+/*doc
+---
+title: Core Objects
+name: Core Objects
+category: Core Objects
+---
+The core objects are sass placeholders designed to be legacy code and can be extended in any part of the code
+
+Usage:
+
+Just place @extend %placeholder name; where you need to extend the css styles
+of the object and you are ready to compile.
+
+This placeholders do not generate any css by themselves.
+
+For more information about placeholders go here:
+<a href="http://thesassway.com/intermediate/understanding-placeholder-selectors">Sass Placeholders</a>
+
+Available core objects:
+
+- button: Basic button definition
+- icon button: Basic button with an icon, just add background image on extended class
+- slider-button: Buttons for sliders
+- links sec1 to sec5: All links versions on the styleguide definition
+- close link: this can be used for modals and other items.
+- pagination: modification for the base foundation paginator
+   Definition of: left button, right button anchors, li and current element selected
+
+- category-header: Headers for main items mainly on homepage and category pages
+- category-item: Category landing items, not products
+   Definition of: Image and link inside element
+
+- sub-category-item: defined as second level items, not products
+- products: defines general generic product display everywhere.
+   Definition of: item, image inside, display image, quickview link(size and transition), name, price(old and new), reviews
+
+- minicart-product: used on the minicart and some places on the checkout process
+   Definition of: item, header, image, description, name, id, pricing, promotional message and total
+
+- send-to-friend: for email to a friend item
+   Definition of: item, image, description, name, id, pricing(before, sale), promotional message, and total
+
+- modal-container: basic elements for modal windows
+- checkout sections: all the elements on the checkout flow
+   Definition of: Cart summary prices and address information
+
+- dashboard: elements on the landing page of my account
+   Definition of: item, title, actions(links on top), content, content title, section
+
+- product description: used on the order product description in the checkout flow
+   Definition of: Header, item, pricing(before and sale), and generic messages
+
+- general-form: Basic form definitions.
+   Definition of: labels, inputs, generic messages, required elements, fieldsets, and placeholders
+
+- generic-table: Basic tables across the site
+
+- general-chevron: breadcrumb on the checkout process
+
+- tabs: modifications for foundation tabs
+   Definition of: tab titles, links and active tab
+
+- sliding-menu-mobile: Basic styling for the mobile sliding menu, for further code please review ux.main.header.js
+   Definition of: subcategory, list, empty space on li(no arrow item), quantity link, and last child
+
+- simple 1 level menu: filters or simple left menus on my account
+   definition of: li and currently selected.
+*/
+.header .top-section .back-checkout, .header .search-button, button.big-primary-button, button.big-secondary-button, input[type="submit"].big-primary-button, input[type="submit"].big-secondary-button, input[type="button"].big-primary-button, input[type="button"].big-secondary-button, a.big-primary-button, .big-primary-button.button-to-link, a.big-secondary-button, .big-secondary-button.button-to-link, button.small-primary-button, button.small-secondary-button, .home-slider .slider-information button, input[type="submit"].small-primary-button, input[type="submit"].small-secondary-button, input[type="button"].small-primary-button, input[type="button"].small-secondary-button, a.small-primary-button, .small-primary-button.button-to-link, a.small-secondary-button, .small-secondary-button.button-to-link {
+  font-size: 0.8125rem;
+  font-weight: bold;
+  font-family: "Tisa Sans";
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 1rem;
+  line-height: 0;
+}
+
+.header .top-section .back-checkout, .header .search-button {
+  width: 2rem;
+  height: 2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.owl-buttons .owl-prev, .owl-buttons .owl-next, #home-slideshow .owl-controls .owl-buttons .owl-prev, #home-slideshow .owl-controls .owl-buttons .owl-next, .generic-slider .owl-controls .owl-buttons .owl-prev, .generic-slider .owl-controls .owl-buttons .owl-next {
+  width: 2.625rem;
+  height: 2.625rem;
+  position: absolute;
+  top: 40%;
+  border-radius: 0.125rem;
+}
+
+.my-account-nav > li > a, .static-content-left-nav > li > a, .my-account-nav > li > .button-to-link, .static-content-left-nav > li > .button-to-link, .category-header, .header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .item .description .name a, .cart-product .cart-product-list .item .description .name a, .header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .item .description .name .button-to-link, .cart-product .cart-product-list .item .description .name .button-to-link, .sub-category-item .name, .category-item .name, .category-nav-landing > li > a, .category-nav-landing > li > .button-to-link, .category-nav-landing > li .small-filters-container .filter-information .title, .category-nav-landing > li .small-filters-container .filter-information ul li a, .category-nav-landing > li .small-filters-container .filter-information ul li .button-to-link, .category-nav-landing > li .small-filters-container > li > a, .category-nav-landing > li .small-filters-container > li > .button-to-link, .category-nav-landing > li .filters-container .filter-information .title, .category-nav-landing > li .filters-container .filter-information ul li a, .category-nav-landing > li .filters-container .filter-information ul li .button-to-link, .category-nav-landing > li .filters-container > li > a, .category-nav-landing > li .filters-container > li > .button-to-link {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #572700;
+}
+
+.products .item .name, .generic-slider .item .name, .category-listing .item .name, .shop-by-menu-mobile li a, .shop-by-menu-mobile li .button-to-link {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #572700;
+}
+
+.express-checkout-modal .header h2 a.close-link, .email-to-friend .header h2 a.close-link, .express-checkout-modal .header .section-header span a.close-link, .section-header .express-checkout-modal .header span a.close-link, .email-to-friend .header .section-header span a.close-link, .section-header .email-to-friend .header span a.close-link, .express-checkout-modal .header h2 .close-link.button-to-link, .email-to-friend .header h2 .close-link.button-to-link, .express-checkout-modal .header .section-header span .close-link.button-to-link, .section-header .express-checkout-modal .header span .close-link.button-to-link, .email-to-friend .header .section-header span .close-link.button-to-link, .section-header .email-to-friend .header span .close-link.button-to-link, .header .top-section .top-menu .user-section .cart-container .minicart .cart-close {
+  position: absolute;
+  color: #ffffff;
+  right: 0.625rem;
+  top: 0.75rem;
+  font-size: 0.875rem;
+  font-style: normal;
+}
+.express-checkout-modal .header h2 a.close-link .cross, .email-to-friend .header h2 a.close-link .cross, .express-checkout-modal .header .section-header span a.close-link .cross, .section-header .express-checkout-modal .header span a.close-link .cross, .email-to-friend .header .section-header span a.close-link .cross, .section-header .email-to-friend .header span a.close-link .cross, .express-checkout-modal .header h2 .close-link.button-to-link .cross, .email-to-friend .header h2 .close-link.button-to-link .cross, .express-checkout-modal .header .section-header span .close-link.button-to-link .cross, .section-header .express-checkout-modal .header span .close-link.button-to-link .cross, .email-to-friend .header .section-header span .close-link.button-to-link .cross, .section-header .email-to-friend .header span .close-link.button-to-link .cross, .header .top-section .top-menu .user-section .cart-container .minicart .cart-close .cross {
+  font-size: 1.5625rem;
+  position: relative;
+  bottom: -0.25rem;
+}
+
+.pagination li {
+  background-color: #f7f8f8 !important;
+  height: auto !important;
+  margin-left: 0.125rem !important;
+}
+.pagination li a, .pagination li .button-to-link {
+  padding: 0.375rem 0.5rem !important;
+  color: #dad2c1 !important;
+  margin-top: 0 !important;
+}
+.pagination li.arrow-left {
+  background-image: url(/tea//ux/img/desktop/arrowleftblue.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0.4375rem 0.3125rem !important;
+  background-size: 30%;
+}
+.pagination li.arrow-right {
+  background-image: url(/tea//ux/img/desktop/arrowrightblue.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0.4375rem 0.3125rem !important;
+  background-size: 30%;
+}
+.pagination .current a, .pagination .current .button-to-link {
+  background-color: #f7f8f8 !important;
+  color: #9b8b81 !important;
+  font-weight: normal !important;
+}
+
+.tabs {
+  border-bottom: 1px solid #572700;
+}
+.tabs .tab-title {
+  outline: none;
+}
+.tabs .tab-title a, .tabs .tab-title .button-to-link {
+  outline: none;
+  background-color: #ffffff;
+  padding: 0.3125rem 0.75rem;
+  font-weight: bold;
+  color: #c34c29;
+}
+.tabs .tab-title a:hover, .tabs .tab-title .button-to-link:hover {
+  background-color: #ffffff;
+}
+.tabs .tab-title.active {
+  border-bottom: 2px solid #EEECE5;
+}
+
+.header .bottom-section .mobile-menu-container .menu-mobile {
+  position: absolute;
+  z-index: 3;
+  padding-top: 0.5rem;
+  border: 1px solid #CAC8C8;
+  background-color: #ffffff;
+}
+.header .bottom-section .mobile-menu-container .menu-mobile .row.gutter {
+  padding: 0 0.5rem;
+}
+.header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li {
+  border-bottom: 1px solid #CAC8C8;
+  margin-bottom: 0.25rem;
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  padding-left: 1.25rem;
+}
+.header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li > ul {
+  margin-left: 0;
+}
+.header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li > ul li {
+  margin-left: 0;
+  border: none;
+}
+.header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li > ul.subcategories {
+  display: none;
+}
+.header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li > ul.subcategories li.title {
+  color: #572700;
+  font-weight: bold;
+  padding-bottom: 0.3125rem;
+}
+.header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li > ul.subcategories li a, .header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li > ul.subcategories li .button-to-link {
+  padding: 0 0 0.3125rem 0;
+  font-weight: normal;
+  color: #9b8b81;
+}
+.header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li.multiple-items {
+  padding-left: 0;
+  margin-left: 0;
+}
+.header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li.multiple-items a, .header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li.multiple-items .button-to-link {
+  color: #816b5b;
+  font-size: 0.5625rem;
+  padding: 0.5rem 0;
+}
+.header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li a, .header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li .button-to-link {
+  padding: 0.875rem 0;
+  display: block;
+  color: #572700;
+  font-weight: bold;
+}
+.header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li a.accordion-trigger, .header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li .accordion-trigger.button-to-link {
+  position: relative;
+}
+.header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li a.accordion-trigger:after, .header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li .accordion-trigger.button-to-link:after {
+  position: absolute;
+  right: 10%;
+  content: "-";
+}
+.header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li a.accordion-trigger.reduced:after, .header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li .accordion-trigger.reduced.button-to-link:after {
+  content: "+";
+}
+.header .bottom-section .mobile-menu-container .menu-mobile .menu-mobile-subcategory ul li:last-child {
+  border-bottom: 0;
+}
+
+.my-account-nav, .static-content-left-nav {
+  margin-right: 1rem;
+}
+.my-account-nav > li, .static-content-left-nav > li {
+  padding-top: 0.5rem;
+}
+.my-account-nav > li > a, .static-content-left-nav > li > a, .my-account-nav > li > .button-to-link, .static-content-left-nav > li > .button-to-link {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.my-account-nav > li > a.current, .static-content-left-nav > li > a.current, .my-account-nav > li > .current.button-to-link, .static-content-left-nav > li > .current.button-to-link {
+  color: #9b8b81;
+}
+
+.category-header {
+  border-bottom: 0.1875rem #572700 solid;
+  display: block;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.category-item {
+  border-bottom: 0.3125rem #572700 solid;
+}
+.category-item .image a, .category-item .image .button-to-link {
+  display: block;
+  text-align: center;
+}
+
+.sub-category-item {
+  border: 1px solid #f7f8f8;
+}
+
+.products .product-hr, .generic-slider .product-hr, .category-listing .product-hr {
+  border-bottom: 1px solid #572700;
+  margin: 2rem 0 !important;
+  padding-top: 1rem;
+}
+.products .item, .generic-slider .item, .category-listing .item {
+  width: 100%;
+  margin: 0 auto;
+}
+.products .item .image, .generic-slider .item .image, .category-listing .item .image {
+  border: 1px solid #f7f8f8;
+  margin-bottom: 0.25rem;
+  position: relative;
+  overflow: hidden;
+}
+.products .item .image:hover > .quickview-link, .generic-slider .item .image:hover > .quickview-link, .category-listing .item .image:hover > .quickview-link {
+  top: 65%;
+  opacity: 1;
+}
+.products .item .image > .display > img, .generic-slider .item .image > .display > img, .category-listing .item .image > .display > img {
+  display: block;
+  margin: 0 auto;
+}
+.products .item .image .quickview-link, .generic-slider .item .image .quickview-link, .category-listing .item .image .quickview-link {
+  -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: absolute;
+  background-color: #816b5b;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  top: 100%;
+  left: 10%;
+  padding: 0.625rem;
+  line-height: 16px;
+  opacity: 0;
+}
+.products .item .image .quickview-link img, .generic-slider .item .image .quickview-link img, .category-listing .item .image .quickview-link img {
+  margin-right: 0.3125rem;
+}
+.products .item .image .quickview-link.medium-display, .generic-slider .item .image .quickview-link.medium-display, .category-listing .item .image .quickview-link.medium-display {
+  left: 8% !important;
+  right: 8% !important;
+}
+.products .item .image .quickview-link.small-display, .generic-slider .item .image .quickview-link.small-display, .category-listing .item .image .quickview-link.small-display {
+  left: 4% !important;
+  right: 4% !important;
+}
+.products .item .price, .generic-slider .item .price, .category-listing .item .price {
+  margin-bottom: 0.25rem;
+  padding-bottom: 0;
+}
+.products .item .price .old-price, .generic-slider .item .price .old-price, .category-listing .item .price .old-price {
+  text-decoration: line-through;
+}
+.products .item .price .new-price, .generic-slider .item .price .new-price, .category-listing .item .price .new-price {
+  color: #c80000;
+}
+.products .item .reviews span, .generic-slider .item .reviews span, .category-listing .item .reviews span {
+  margin-left: 0.625rem;
+}
+
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .item, .cart-product .cart-product-list .item {
+  border-bottom: 1px solid #572700;
+  padding-right: 1.25rem;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .item.not-mini, .cart-product .cart-product-list .item.not-mini {
+  padding-right: 0 !important;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .item .header, .cart-product .cart-product-list .item .header {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  padding-bottom: 0;
+  margin-top: 1rem;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .item .image, .cart-product .cart-product-list .item .image {
+  border: 1px solid #f7f8f8;
+  text-align: center;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .item .description p, .cart-product .cart-product-list .item .description p {
+  font-size: 0.75rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .item .description p span, .cart-product .cart-product-list .item .description p span {
+  font-size: 0.75rem;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .item .description .name a, .cart-product .cart-product-list .item .description .name a, .header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .item .description .name .button-to-link, .cart-product .cart-product-list .item .description .name .button-to-link {
+  font-size: 0.75rem;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .item .description .id, .cart-product .cart-product-list .item .description .id {
+  margin-bottom: 0;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .item .pricing p, .cart-product .cart-product-list .item .pricing p {
+  overflow: hidden;
+  font-size: 0.75rem;
+  margin-bottom: 0rem;
+  padding-bottom: 0;
+  text-align: right;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .item .pricing p span, .cart-product .cart-product-list .item .pricing p span {
+  font-size: 0.75rem;
+  text-align: left;
+  float: left;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .item .pricing .promotional, .cart-product .cart-product-list .item .pricing .promotional {
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  margin: 0;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .total, .cart-product .cart-product-list .total {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .total p, .cart-product .cart-product-list .total p {
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+  padding-bottom: 0;
+  text-align: right;
+  overflow: hidden;
+  padding-left: 70%;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .total p span, .cart-product .cart-product-list .total p span {
+  font-size: 0.75rem;
+  float: left;
+}
+
+.email-to-friend .email-friend-item .item .image {
+  border: 1px solid #f7f8f8;
+}
+.email-to-friend .email-friend-item .item .description p {
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+  padding-bottom: 0;
+}
+.email-to-friend .email-friend-item .item .description .name {
+  margin-top: 0.9375rem;
+  font-size: 1.375rem;
+  line-height: 1.25rem;
+}
+.email-to-friend .email-friend-item .item .description .id {
+  margin-bottom: 1rem;
+}
+.email-to-friend .email-friend-item .item .description .pricing .before {
+  text-decoration: line-through;
+}
+.email-to-friend .email-friend-item .item .description .pricing .sale {
+  color: #c80000;
+}
+.email-to-friend .email-friend-item .item .description .promotional-message {
+  background-color: #f7f8f8;
+}
+.email-to-friend .email-friend-item .item .description .promotional-message p {
+  padding: 0.875rem;
+  font-style: italic;
+}
+.email-to-friend .email-friend-item .total {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+.email-to-friend .email-friend-item .total p {
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+  padding-bottom: 0;
+  text-align: right;
+  overflow: hidden;
+  padding-left: 70%;
+}
+.email-to-friend .email-friend-item .total p span {
+  font-size: 0.75rem;
+  float: left;
+}
+
+.modal-cont {
+  padding: 0;
+  margin: 0;
+}
+
+.express-checkout-modal .header, .email-to-friend .header {
+  background-color: #EEECE5;
+}
+.express-checkout-modal .header h2, .email-to-friend .header h2, .express-checkout-modal .header .section-header span, .section-header .express-checkout-modal .header span, .email-to-friend .header .section-header span, .section-header .email-to-friend .header span {
+  margin-top: 0;
+  padding: 0.625rem;
+  position: relative;
+  color: #ffffff;
+}
+.express-checkout-modal .body, .email-to-friend .body {
+  margin: 1.875rem;
+}
+
+.cart-summary .cart-summary-list .summary {
+  border-bottom: 1px solid #572700;
+  margin-top: 0.625rem;
+}
+.cart-summary .cart-summary-list .summary p {
+  padding: 0;
+  font-size: 0.75rem;
+}
+.cart-summary .cart-summary-list .summary .discount-total p {
+  color: #c80000;
+}
+.cart-summary .cart-summary-list .summary:last-child {
+  border-bottom: none;
+}
+
+.address-container, .single-address-container {
+  padding-bottom: 0.625rem;
+}
+.address-container p, .single-address-container p {
+  padding: 0 0 0 0;
+  margin-bottom: 0;
+}
+.address-container p:first-child, .single-address-container p:first-child {
+  padding-left: 0;
+}
+.address-container p input[type='radio'], .single-address-container p input[type='radio'] {
+  margin-bottom: 0;
+}
+
+.dashboard .item,
+.address-book .item,
+.payment-methods .item,
+.gift-list .item {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.dashboard .item .title,
+.address-book .item .title,
+.payment-methods .item .title,
+.gift-list .item .title {
+  border-bottom: 5px solid #EEECE5;
+}
+.dashboard .item .title .actions,
+.address-book .item .title .actions,
+.payment-methods .item .title .actions,
+.gift-list .item .title .actions {
+  float: right;
+}
+.dashboard .item .content .content-title,
+.address-book .item .content .content-title,
+.payment-methods .item .content .content-title,
+.gift-list .item .content .content-title {
+  font-size: 0.8125rem !important;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+.dashboard .item .content .section,
+.address-book .item .content .section,
+.payment-methods .item .content .section,
+.gift-list .item .content .section {
+  margin-bottom: 1rem;
+}
+.dashboard .item .content .section p,
+.address-book .item .content .section p,
+.payment-methods .item .content .section p,
+.gift-list .item .content .section p {
+  margin-bottom: 0.25rem;
+  padding-bottom: 0;
+}
+.dashboard .item .content .section p.no-cap,
+.address-book .item .content .section p.no-cap,
+.payment-methods .item .content .section p.no-cap,
+.gift-list .item .content .section p.no-cap {
+  text-transform: none;
+}
+.dashboard .item .content .section p span,
+.address-book .item .content .section p span,
+.payment-methods .item .content .section p span,
+.gift-list .item .content .section p span {
+  text-transform: capitalize;
+}
+
+.product-listing .header .columns, .wishlist .header .columns, .cart-product-gift .header .columns {
+  border-bottom: 5px solid #EEECE5;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding-top: 0.9375rem;
+  padding-bottom: 0.25rem;
+}
+.product-listing .item, .wishlist .item, .cart-product-gift .item {
+  margin-top: 10px !important;
+  border-bottom: 1px solid #572700;
+  padding-bottom: 0.25rem;
+}
+.product-listing .item .pricing .before, .wishlist .item .pricing .before, .cart-product-gift .item .pricing .before {
+  text-decoration: line-through;
+}
+.product-listing .item .pricing .sale, .wishlist .item .pricing .sale, .cart-product-gift .item .pricing .sale {
+  color: #c80000;
+}
+.product-listing .item .message, .wishlist .item .message, .cart-product-gift .item .message {
+  text-align: center;
+  font-style: italic;
+  background-color: #f7f8f8;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem 0;
+}
+
+form label {
+  font-weight: bold;
+}
+form input[type="checkbox"] {
+  margin-bottom: 1rem;
+  position: relative;
+  top: 0.125rem;
+}
+form input[type="checkbox"] + span {
+  font-size: 0.75rem;
+}
+form .generic-message {
+  margin: 0.5rem 0 1rem 0;
+  padding-bottom: 0;
+  font-weight: bold;
+}
+form .required {
+  color: #c80000;
+}
+form fieldset {
+  border: none;
+  border-bottom: 1px solid #572700;
+}
+form hr
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #bbb;
+}
+form :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #bbb;
+  opacity: 1;
+}
+form ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #bbb;
+  opacity: 1;
+}
+form :-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #bbb;
+}
+
+.orders-table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+}
+.orders-table thead {
+  background-color: transparent;
+}
+.orders-table thead th {
+  border-bottom: 5px #EEECE5 solid;
+}
+.orders-table tbody tr td:last-child {
+  text-align: right;
+}
+
+.chevron-checkout {
+  font-size: 0.8125rem;
+  border-bottom: 0.0625rem solid #572700;
+}
+.chevron-checkout div {
+  height: 3rem;
+  line-height: 3rem;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  padding-left: 1.5rem !important;
+  background-color: #f7f8f8;
+}
+.chevron-checkout div a, .chevron-checkout div .button-to-link {
+  line-height: 3rem;
+  width: 100%;
+  color: #9b8b81;
+}
+.chevron-checkout div:after, .chevron-checkout div:before {
+  bottom: 0;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  left: 100%;
+}
+.chevron-checkout div:after {
+  border-color: rgba(250, 250, 250, 0);
+  border-left-color: #f7f8f8;
+  border-width: 1.5rem;
+}
+.chevron-checkout div:before {
+  border-color: rgba(190, 190, 190, 0);
+  border-left-color: #572700;
+  border-width: 1.5625rem;
+  top: -0.0625rem;
+}
+.chevron-checkout div.start {
+  text-align: left;
+  padding-left: 1rem !important;
+  font-size: 1.375rem;
+  font-style: italic;
+  font-weight: normal;
+  background-color: #ffffff;
+}
+.chevron-checkout div.start.start:after {
+  border-color: rgba(250, 250, 250, 0);
+  border-left-color: #ffffff;
+}
+.chevron-checkout div.active {
+  color: #ffffff;
+  background-color: #816b5b;
+}
+.chevron-checkout div.active.active:after {
+  border-color: rgba(250, 250, 250, 0);
+  border-left-color: #816b5b;
+}
+
+@media only screen and (max-width: 47.94rem) {
+  .dashboard,
+  .address-book,
+  .payment-methods,
+  .gift-list {
+    margin-top: 1rem !important;
+  }
+  .dashboard .item .title,
+  .address-book .item .title,
+  .payment-methods .item .title,
+  .gift-list .item .title {
+    border-bottom: none;
+    border-bottom: 1px solid #666;
+    padding: 0.875rem 0;
+    margin-bottom: 0.25rem;
+    background-image: url("/ux/img/mobile/arrowrightblue.png");
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    padding-left: 1.25rem;
+    color: #EEECE5 !important;
+    font-size: 0.9375rem;
+  }
+  .dashboard .item .title .actions,
+  .address-book .item .title .actions,
+  .payment-methods .item .title .actions,
+  .gift-list .item .title .actions {
+    display: none;
+  }
+  .dashboard .item .content,
+  .address-book .item .content,
+  .payment-methods .item .content,
+  .gift-list .item .content {
+    display: none;
+  }
+  .dashboard .item .content.small-display,
+  .address-book .item .content.small-display,
+  .payment-methods .item .content.small-display,
+  .gift-list .item .content.small-display {
+    display: block !important;
+  }
+
+  .products .item .image a, .generic-slider .item .image a, .category-listing .item .image a, .products .item .image .button-to-link, .generic-slider .item .image .button-to-link, .category-listing .item .image .button-to-link {
+    display: block;
+  }
+  .products .item .image a img, .generic-slider .item .image a img, .category-listing .item .image a img, .products .item .image .button-to-link img, .generic-slider .item .image .button-to-link img, .category-listing .item .image .button-to-link img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+/*doc
+---
+title: owl-styles
+name: owl-carouser
+category: Owl CSS
+---
+
+Styles for owl carousel
+Please visit http://owlgraphic.com/owlcarousel/ for further information
+*/
+.owl-buttons {
+  width: 100%;
+  position: absolute;
+}
+
+.owl-buttons .owl-prev, .owl-buttons .owl-next {
+  position: absolute;
+  top: 0;
+  text-indent: -9999px;
+}
+
+.owl-buttons .owl-prev {
+  left: -40px;
+  background: url(/tea//ux/img/desktop/arrowleftgray.png) center center no-repeat rgba(255, 255, 255, 0.8);
+}
+.owl-buttons .owl-prev:hover {
+  background-image: url(/tea//ux/img/desktop/arrowleftblue.png);
+}
+
+.owl-buttons .owl-next {
+  right: -40px;
+  background: url(/tea//ux/img/desktop/arrowrightgray.png) center center no-repeat rgba(255, 255, 255, 0.8);
+}
+.owl-buttons .owl-next:hover {
+  background-image: url(/tea//ux/img/desktop/arrowrightblue.png);
+}
+
+.owl-theme .owl-controls {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 24%;
+}
+
+.owl-pagination {
+  display: none;
+}
+
+.owl-theme .owl-controls .owl-page {
+  display: inline-block;
+  /*zoom: 1; *display: inline;*/
+  /*IE7 life-saver */
+}
+
+.owl-theme .owl-controls .owl-page span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 5px 7px;
+  /*filter: Alpha(Opacity=50);*/
+  /*IE7 fix*/
+  opacity: 0.5;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: #869791;
+}
+
+.owl-theme .owl-controls .owl-page.active span, .owl-theme .owl-controls.clickable .owl-page:hover span {
+  /*filter: Alpha(Opacity=100);*/
+  /*IE7 fix*/
+  opacity: 1;
+}
+
+.owl-theme .owl-controls .owl-page span.owl-numbers {
+  height: auto;
+  width: auto;
+  color: #FFF;
+  padding: 2px 10px;
+  font-size: 12px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}
+
+.owl-carousel {
+  display: none;
+  position: relative;
+  width: 100%;
+  -ms-touch-action: pan-y;
+}
+
+.owl-carousel .owl-wrapper {
+  display: none;
+  position: relative;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+}
+
+.owl-carousel .owl-wrapper-outer {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.owl-carousel .owl-wrapper-outer.autoHeight {
+  -webkit-transition: height 500ms ease-in-out;
+  -moz-transition: height 500ms ease-in-out;
+  -ms-transition: height 500ms ease-in-out;
+  -o-transition: height 500ms ease-in-out;
+  transition: height 500ms ease-in-out;
+}
+
+.owl-carousel .owl-item {
+  float: left;
+}
+
+.owl-controls .owl-page, .owl-controls .owl-buttons div {
+  cursor: pointer;
+}
+
+.owl-controls {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.owl-carousel .owl-wrapper, .owl-carousel .owl-item {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+}
+
+.owl-theme .owl-controls .owl-page {
+  display: inline-block;
+  zoom: 1;
+  /**display: inline;*/
+  /*IE7 life-saver */
+}
+
+.owl-theme .owl-controls .owl-page span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 5px 7px;
+  /*filter: Alpha(Opacity=50);*/
+  /*IE7 fix*/
+  opacity: 0.5;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: #869791;
+}
+
+.owl-theme .owl-controls .owl-page.active span, .owl-theme .owl-controls.clickable .owl-page:hover span {
+  /*filter: Alpha(Opacity=100);*/
+  /*IE7 fix*/
+  opacity: 1;
+}
+
+@media only screen and (max-width: 47.94rem) {
+  .owl-buttons {
+    display: none;
+  }
+}
+/*doc
+---
+title: magic-zoom-plus
+name: magic-zoom-plus
+category: magic zoom plus CSS
+---
+
+Styles for magic zoom plus
+Please visit https://www.magictoolbox.com/magiczoomplus/ for further information
+*/
+/*
+
+
+   Magic Zoom Plus v2.0.9
+   Copyright 2010 Magic Toolbox
+   You must buy a license to use this tool.
+   Go to www.magictoolbox.com/magiczoomplus/
+
+
+*/
+.MagicZoom img {
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Style of zoomed window */
+.MagicZoomBigImageCont {
+  border: 1px solid #999;
+}
+.MagicZoomBigImageCont img {
+  max-width: none !important;
+}
+
+/* Style of header, activated with "title" attribute in <a> tag */
+.MagicZoomHeader {
+  font-size: 8pt !important;
+  line-height: normal !important;
+  color: #fff;
+  background: #666;
+  text-align: center !important;
+}
+
+/* Style of small square under mouse */
+.MagicZoomPup {
+  border: 1px solid #aaa;
+  background: #fff;
+  cursor: move;
+}
+
+/* Style of message box while image is loading */
+.MagicZoomLoading {
+  border: 1px solid #ccc;
+  background: #fff url(/tea/ux/vendors/magiczoomplus/graphics/loader.gif) no-repeat 2px 50%;
+  padding: 4px 4px 4px 24px !important;
+  margin: 0;
+  text-decoration: none;
+  text-align: left;
+  font-size: 8pt;
+  font-family: sans-serif;
+  color: #444;
+}
+
+/* Style of the small image link */
+.MagicZoomPlus {
+  cursor: url(/tea/ux/vendors/magiczoomplus/graphics/zoomin.cur), pointer;
+  outline: 0 !important;
+}
+
+/* Style of the small image */
+.MagicZoomPlus img {
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Style of the span inside the small image link */
+.MagicZoomPlus span {
+  display: none !important;
+}
+
+/* Style of hotspots */
+.MagicHotspots {
+  display: none;
+  visibility: hidden;
+}
+
+.MagicHotspots a, .MagicHotspots .button-to-link {
+  border: 1px solid #ccc;
+}
+
+.MagicHotspots a:hover, .MagicHotspots .button-to-link:hover {
+  border: 1px solid red;
+}
+
+/* Style of the small image link */
+.MagicThumb, .MagicThumb:hover {
+  cursor: url(/tea/ux/vendors/magiczoomplus/graphics/zoomin.cur), pointer;
+  outline: 0 !important;
+}
+
+/* Style of the small image when the large image is expanded */
+.MagicThumb-expanded-thumbnail {
+  cursor: default;
+}
+
+/* Style of the span inside the small image link */
+.MagicThumb span {
+  display: none !important;
+}
+
+/* Style of the small image */
+.MagicThumb img {
+  border: 0;
+  outline: 0;
+}
+
+/* Style of the expanded image */
+.MagicThumb-expanded {
+  cursor: url(/tea/ux/vendors/magiczoomplus/graphics/zoomout.cur), pointer;
+  background: transparent;
+  border: 1px solid #ccc;
+  outline: 0;
+  padding: 0;
+}
+
+/* Style of the caption for the expanded image */
+.MagicThumb-caption {
+  color: #333;
+  font: normal 10pt Verdana, Helvetica;
+  background: #ccc;
+  text-align: left;
+  padding: 8px;
+  border: 0 !important;
+  outline: 0 !important;
+}
+
+/* Style of the close/next/previous buttons */
+.MagicThumb-buttons {
+  background: transparent url(/tea/ux/vendors/magiczoomplus/graphics/buttons1.png) no-repeat 0 0;
+  height: 24px;
+  display: block;
+}
+
+.MagicThumb-buttons a, .MagicThumb-buttons .button-to-link {
+  width: 24px;
+  height: 24px;
+  margin: 0px 1px !important;
+  overflow: hidden;
+}
+
+/* Style of the loading message box */
+.MagicThumb-loader {
+  font: normal 12pt sans-serif;
+  border: 1px solid #000;
+  background: #fff url(/tea/ux/vendors/magiczoomplus/graphics/loader.gif) no-repeat 2px 50%;
+  padding: 2px 2px 2px 22px;
+  margin: 0;
+  text-decoration: none;
+  text-align: left;
+}
+
+/* Style of the small images which swap the main image */
+/* Style to hide caption on page. Only needed for #id method. */
+.MagicThumb-external-caption {
+  display: none;
+}
+
+/* For Medium Only */
+/* For Small Only */
+@media only screen and (max-width: 47.94rem) {
+  .MagicZoomBigImageCont {
+    display: none;
+  }
+}
+.pc-main-1 {
+  color: #ffffff;
+}
+
+.pc-main-2 {
+  color: #9b8b81;
+}
+
+.bc-main-1 {
+  background-color: #ffffff;
+}
+
+.bc-main-2 {
+  background-color: #9b8b81;
+}
+
+.pc-1 {
+  color: #572700;
+}
+
+.pc-2 {
+  color: #d04d00;
+}
+
+.pc-3 {
+  color: #816b5b;
+}
+
+.pc-4 {
+  color: #c34c29;
+}
+
+.pc-5 {
+  color: #EEECE5;
+}
+
+.pc-6 {
+  color: #E0645A;
+}
+
+.pc-7 {
+  color: #dad2c1;
+}
+
+.pc-8 {
+  color: #000000;
+}
+
+.pc-9 {
+  color: #CAC8C8;
+}
+
+.pc-10 {
+  color: #f7f8f8;
+}
+
+.pc-11 {
+  color: #c80000;
+}
+
+/* Background colors */
+.bc-1 {
+  background-color: #572700;
+}
+
+.bc-2 {
+  background-color: #d04d00;
+}
+
+.bc-3 {
+  background-color: #816b5b;
+}
+
+.bc-4 {
+  background-color: #c34c29;
+}
+
+.bc-5 {
+  background-color: #EEECE5;
+}
+
+.bc-6 {
+  background-color: #E0645A;
+}
+
+.bc-7 {
+  background-color: #dad2c1;
+}
+
+.bc-8 {
+  background-color: #000000;
+}
+
+.bc-9 {
+  background-color: #CAC8C8;
+}
+
+.bc-10 {
+  background-color: #f7f8f8;
+}
+
+.bc-11 {
+  background-color: #c80000;
+}
+
+/* Links */
+/*doc
+---
+title: Links
+name: Links
+category: base
+---
+
+Basic Links used by default
+
+Usage:
+
+```html_example
+<a>Basic Link</a>
+```
+*/
+a, .button-to-link {
+  color: #572700;
+  text-decoration: none;
+  -ms-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Buttons */
+/*doc
+---
+title: Buttons
+name: Buttons
+category: base
+---
+
+TODO: change class for primary and secondary buttons instead of colors
+
+Button styles, this buttons get their base code from core_objects.scss
+
+Added element close partial modal, copy of close reveal from foundation
+
+Usage:
+
+```html_example
+<button> Basic Button</button>
+<button class="big-primary-button">Big Green</button>
+<button class="big-secondary-button">Big Blue</button>
+<button class="small-primary-button">Small Green</button>
+<button class="small-secondary-button">Small Blue</button>
+```
+*/
+button.big-primary-button, button.big-secondary-button, input[type="submit"].big-primary-button, input[type="submit"].big-secondary-button, input[type="button"].big-primary-button, input[type="button"].big-secondary-button, a.big-primary-button, .big-primary-button.button-to-link, input.button-to-link[type="submit"].big-secondary-button, input.button-to-link[type="button"].big-secondary-button, a.big-secondary-button, .big-secondary-button.button-to-link {
+  background-color: #572700;
+  height: 2.1875rem;
+  font-family: 'Tisa Sans', Arial, Helvetica, sans┬¡-serif;
+  font-weight: normal;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+button.big-primary-button.disabled, button.disabled.big-secondary-button, button.big-primary-button[disabled="disabled"], button[disabled="disabled"].big-secondary-button, input[type="submit"].big-primary-button.disabled, input[type="submit"].disabled.big-secondary-button, input[type="submit"].big-primary-button[disabled="disabled"], input[type="submit"][disabled="disabled"].big-secondary-button, input[type="button"].big-primary-button.disabled, input[type="button"].disabled.big-secondary-button, input[type="button"].big-primary-button[disabled="disabled"], input[type="button"][disabled="disabled"].big-secondary-button, a.big-primary-button.disabled, .big-primary-button.disabled.button-to-link, a.disabled.big-secondary-button, .disabled.big-secondary-button.button-to-link, a.big-primary-button[disabled="disabled"], .big-primary-button[disabled="disabled"].button-to-link, a[disabled="disabled"].big-secondary-button, [disabled="disabled"].big-secondary-button.button-to-link {
+  background-color: #f7f8f8 !important;
+}
+button.big-primary-button:hover, button.big-secondary-button:hover, input[type="submit"].big-primary-button:hover, input[type="submit"].big-secondary-button:hover, input[type="button"].big-primary-button:hover, input[type="button"].big-secondary-button:hover, a.big-primary-button:hover, .big-primary-button.button-to-link:hover, a.big-secondary-button:hover, .big-secondary-button.button-to-link:hover {
+  background-color: #816b5b;
+}
+button.big-secondary-button, input[type="submit"].big-secondary-button, input[type="button"].big-secondary-button, a.big-secondary-button, .big-secondary-button.button-to-link {
+  background-color: #ffffff;
+  color: #9b8b81;
+  cursor: pointer;
+  border: 1px solid #9b8b81;
+}
+button.big-secondary-button.disabled, button.big-secondary-button[disabled="disabled"], input[type="submit"].big-secondary-button.disabled, input[type="submit"].big-secondary-button[disabled="disabled"], input[type="button"].big-secondary-button.disabled, input[type="button"].big-secondary-button[disabled="disabled"], a.big-secondary-button.disabled, .big-secondary-button.disabled.button-to-link, a.big-secondary-button[disabled="disabled"], .big-secondary-button[disabled="disabled"].button-to-link {
+  background-color: #f7f8f8 !important;
+}
+button.big-secondary-button:hover, input[type="submit"].big-secondary-button:hover, input[type="button"].big-secondary-button:hover, a.big-secondary-button:hover, .big-secondary-button.button-to-link:hover {
+  background-color: #EEECE5;
+  border: 1px solid #dad2c1;
+}
+button.small-primary-button, button.small-secondary-button, .home-slider .slider-information button, input[type="submit"].small-primary-button, input[type="submit"].small-secondary-button, input[type="button"].small-primary-button, input[type="button"].small-secondary-button, a.small-primary-button, .small-primary-button.button-to-link, input.button-to-link[type="submit"].small-secondary-button, input.button-to-link[type="button"].small-secondary-button, .home-slider .slider-information button.button-to-link, a.small-secondary-button, .small-secondary-button.button-to-link {
+  background-color: #572700;
+  font-family: 'Tisa Sans', Arial, Helvetica, sans┬¡-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 0.75rem;
+  height: 1.5625rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+button.small-primary-button.disabled, button.disabled.small-secondary-button, .home-slider .slider-information button.disabled, button.small-primary-button[disabled="disabled"], button[disabled="disabled"].small-secondary-button, .home-slider .slider-information button[disabled="disabled"], input[type="submit"].small-primary-button.disabled, input[type="submit"].disabled.small-secondary-button, input[type="submit"].small-primary-button[disabled="disabled"], input[type="submit"][disabled="disabled"].small-secondary-button, input[type="button"].small-primary-button.disabled, input[type="button"].disabled.small-secondary-button, input[type="button"].small-primary-button[disabled="disabled"], input[type="button"][disabled="disabled"].small-secondary-button, a.small-primary-button.disabled, .small-primary-button.disabled.button-to-link, .home-slider .slider-information button.disabled.button-to-link, a.disabled.small-secondary-button, .disabled.small-secondary-button.button-to-link, a.small-primary-button[disabled="disabled"], .small-primary-button[disabled="disabled"].button-to-link, .home-slider .slider-information button[disabled="disabled"].button-to-link, a[disabled="disabled"].small-secondary-button, [disabled="disabled"].small-secondary-button.button-to-link {
+  background-color: #f7f8f8 !important;
+}
+button.small-primary-button:hover, button.small-secondary-button:hover, .home-slider .slider-information button:hover, input[type="submit"].small-primary-button:hover, input[type="submit"].small-secondary-button:hover, input[type="button"].small-primary-button:hover, input[type="button"].small-secondary-button:hover, a.small-primary-button:hover, .small-primary-button.button-to-link:hover, .home-slider .slider-information button.button-to-link:hover, a.small-secondary-button:hover, .small-secondary-button.button-to-link:hover {
+  background-color: #816b5b;
+}
+button.small-secondary-button, input[type="submit"].small-secondary-button, input[type="button"].small-secondary-button, a.small-secondary-button, .small-secondary-button.button-to-link {
+  background-color: #d04d00;
+  cursor: pointer;
+}
+button.small-secondary-button.disabled, button.small-secondary-button[disabled="disabled"], input[type="submit"].small-secondary-button.disabled, input[type="submit"].small-secondary-button[disabled="disabled"], input[type="button"].small-secondary-button.disabled, input[type="button"].small-secondary-button[disabled="disabled"], a.small-secondary-button.disabled, .small-secondary-button.disabled.button-to-link, a.small-secondary-button[disabled="disabled"], .small-secondary-button[disabled="disabled"].button-to-link {
+  background-color: #f7f8f8 !important;
+}
+button.small-secondary-button:hover, input[type="submit"].small-secondary-button:hover, input[type="button"].small-secondary-button:hover, a.small-secondary-button:hover, .small-secondary-button.button-to-link:hover {
+  background-color: #EEECE5;
+  border: 1px solid #dad2c1;
+}
+
+a.big-green-button, .big-green-button.button-to-link, a.big-blue-button, .big-blue-button.button-to-link {
+  padding: 12px 5px;
+  display: inline-block;
+  text-align: center;
+  height: auto;
+}
+a.small-green-button, .small-green-button.button-to-link, a.small-blue-button, .small-blue-button.button-to-link {
+  padding: 7px 5px;
+  display: inline-block;
+  text-align: center;
+  height: auto;
+}
+
+.reveal-modal .not-close-reveal-modal {
+  font-size: 2.5rem;
+  line-height: 1;
+  position: absolute;
+  top: 0.3125rem;
+  right: 0.6875rem;
+  color: #aaaaaa;
+  font-weight: bold;
+  cursor: pointer;
+}
+.reveal-modal #modal-content {
+  padding-top: 3.125rem !important;
+}
+
+/* Titles */
+/*doc
+---
+title: Titles
+name: Titles
+category: base
+---
+Basic styles for Headings.
+
+Usage:
+
+```html_example
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+
+<h3 class="page-header">Page Header</h3>
+<h3 class="section-header"><span>Section Header</span></h3>
+
+```
+*/
+body {
+  font-family: 'Tisa Sans', Arial, Helvetica, sans-serif;
+}
+
+h1, h2, .section-header span, h3, h4, h5, h6 {
+  text-align: left;
+}
+h1 a, h1 .button-to-link, h2 a, .section-header span a, h2 .button-to-link, .section-header span .button-to-link, h3 a, h3 .button-to-link, h4 a, h4 .button-to-link, h5 a, h5 .button-to-link, h6 a, h6 .button-to-link {
+  color: #d04d00;
+}
+
+h1 {
+  font-family: 'Tisa';
+  font-style: normal;
+  font-size: 2.125rem;
+  color: #572700;
+}
+
+h2, .section-header span {
+  font-family: 'Tisa';
+  font-style: normal;
+  font-size: 1.75rem;
+  color: #572700;
+}
+
+h3 {
+  font-family: 'Tisa Sans';
+  font-weight: normal;
+  font-size: 1.375rem;
+  color: #816b5b;
+}
+
+h4 {
+  font-family: 'Tisa Medium';
+  font-size: 1.25rem;
+  font-weight: normal;
+  font-text-transform: uppercase;
+  color: #572700;
+}
+
+h5 {
+  font-family: 'Tisa Sans Medium';
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: #572700;
+}
+
+h6 {
+  font-family: 'Tisa Sans Bold';
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: #572700;
+}
+
+a, .button-to-link {
+  color: #d04d00;
+}
+
+a.size-chart, .size-chart.button-to-link {
+  color: #9b8b81;
+  font-family: 'Tisa Sans';
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.section-header {
+  position: relative;
+  text-align: center;
+}
+.section-header:before {
+  content: "";
+  display: block;
+  border-top: solid 1px #572700;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+.section-header span {
+  color: #572700;
+  background: #fff;
+  padding: 0 1.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.page-header {
+  font-size: 1.75rem;
+}
+
+/* Text */
+/*doc
+---
+title: Text
+name: Text
+category: base
+---
+
+Basic styles for text on the website
+
+Usage:
+
+```html_example
+<p> Basic Paragraph</p>
+
+<ul>
+   <li>Basic List</li>
+   <li>Basic List</li>
+   <li>Basic List</li>
+</ul>
+<br />
+<ul class="regular-list">
+   <li>Regular List</li>
+   <li>Regular List</li>
+   <li>Regular List</li>
+</ul>
+
+<hr/>
+
+<label>Basic Label</label>
+```
+*/
+p {
+  color: #9b8b81;
+  font-family: "Tisa Sans";
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+ul, li, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.regular-list {
+  margin-left: 0.625rem;
+}
+ul.regular-list li {
+  list-style: disc;
+  list-style-position: inside;
+  margin-bottom: 0.3125rem;
+}
+
+hr {
+  border: 0 none;
+  margin: 15px auto !important;
+  clear: both;
+  float: none !important;
+}
+
+label {
+  color: #9b8b81;
+  font-size: 12px;
+}
+
+textarea {
+  resize: none;
+}
+
+.required {
+  color: #c80000;
+}
+
+/*doc
+---
+title: Tabs
+name: Tabs
+category: base
+---
+
+Foundation tabs modified by core objects item, to change some colors that can't be changed via foundation config.
+
+Usage:
+
+```html_example
+<ul class="tabs mt20" data-tab>
+  <li class="tab-title active"><a href="#panel1">Tab 1</a></li>
+  <li class="tab-title"><a href="#panel2">Tab 2</a></li>
+  <li class="tab-title"><a href="#panel3">Tab 3</a></li>
+  <li class="tab-title"><a href="#panel4">Tab 4</a></li>
+</ul>
+<div class="tabs-content">
+  <div class="content active" id="panel1">
+    <p>This is the first panel of the basic tab example. You can place all sorts of content here including a grid.</p>
+  </div>
+  <div class="content" id="panel2">
+    <p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
+  </div>
+  <div class="content" id="panel3">
+    <p>This is the third panel of the basic tab example. This is the third panel of the basic tab example.</p>
+  </div>
+  <div class="content" id="panel4">
+    <p>This is the fourth panel of the basic tab example. This is the fourth panel of the basic tab example.</p>
+  </div>
+</div>
+```
+*/
+/* Modal */
+.modal-top-bgc {
+  background-color: #EEECE5;
+  width: 100%;
+  height: 2.875rem;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+/* For Medium Only */
+@media only screen and (max-width: 47.94rem) {
+  .big-primary-button, button.big-secondary-button, input[type="submit"].big-secondary-button, input[type="button"].big-secondary-button, a.big-secondary-button, .big-secondary-button.button-to-link, .small-primary-button.full, button.full.small-secondary-button, input.full[type="submit"].small-secondary-button, input.full[type="button"].small-secondary-button, a.full.small-secondary-button, .full.small-secondary-button.button-to-link, .home-slider .slider-information button.full {
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  .accordion .accordion-navigation > a, .accordion .accordion-navigation > .button-to-link {
+    background-color: transparent;
+    border-top: 1px solid #c34c29;
+    color: #EEECE5;
+    font-weight: bold;
+  }
+  .accordion .accordion-navigation > a:hover, .accordion .accordion-navigation > .button-to-link:hover {
+    background-color: transparent;
+  }
+  .accordion .accordion-navigation > a:focus, .accordion .accordion-navigation > .button-to-link:focus {
+    background-color: transparent;
+  }
+  .accordion .accordion-navigation > a:after, .accordion .accordion-navigation > .button-to-link:after {
+    content: "+";
+    float: right;
+  }
+  .accordion .accordion-navigation > a.active:after, .accordion .accordion-navigation > .active.button-to-link:after {
+    content: "-";
+  }
+  .accordion .accordion-navigation.active > a, .accordion .accordion-navigation.active > .button-to-link {
+    background-color: transparent;
+  }
+  .accordion .accordion-navigation .content .active ~ a:after, .accordion .accordion-navigation .content .active ~ .button-to-link:after {
+    content: "-";
+  }
+}
+
+/*-------
+ Header
+---------*/
+/* do not use this classes outside the header */
+.header {
+  /* Top Section*/
+ /* This section has the next elements:
+   -Logo
+   -Searchbox
+   -Mini Cart
+   -Mega Menu
+*/
+  /* Bottom Section*/
+ /* This section has the next elements:
+      -Offers
+      -Other information displayed
+*/
+}
+.header .top-section {
+  /* Megamenu mobile */
+  /* This is the megamenu displayed
+   on tablet and mobile resolutions,
+   it is hosted on the header Top section.
+   Works with javascript hosted on header.js
+*/
+  /* Checkout Header */
+}
+.header .top-section > .row {
+  /* Set background color for section */
+  padding: 0;
+  position: relative;
+  z-index: 3;
+  background-color: transparent;
+}
+.header .top-section .back-checkout {
+  margin-top: 0.625rem;
+  background-image: url(/tea//ux/img/desktop/arrowleft.png);
+}
+.header .top-section .logo {
+  padding: 0;
+  margin: 0;
+}
+.header .top-section .top-logo {
+  width: 10%;
+}
+.header .top-section .top-menu {
+  width: 90%;
+  /*Mega menu*/
+         /* This megamenu is displayed on
+          desktop, javascript hosted on
+          header.js show and hide made with
+          css3
+
+          This element can't be applied the show-for-large or any other
+          for the display that they have, to show or hide, modify the media
+          queries that are below.
+       */
+  /* User Account Mobile */
+}
+.header .top-section .top-menu:before {
+  width: 100%;
+  height: 20px;
+  background-color: #222;
+}
+.header .top-section .top-menu .megamenu {
+  margin-left: 1.7rem;
+  margin-top: 2.875rem;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+  table-layout: fixed;
+  /* Megamenu centered block version */
+}
+.header .top-section .top-menu .megamenu > li {
+  display: inline-block;
+  vertical-align: middle;
+}
+.header .top-section .top-menu .megamenu > li > a, .header .top-section .top-menu .megamenu > li > .button-to-link {
+  padding: 0.25rem 1.8125rem 0 0;
+  margin: 0;
+  display: inline-block;
+  color: #572700;
+  transition-delay: 0.6s;
+  font-family: 'Tisa Medium';
+  font-size: 0.95rem;
+  font-weight: normal;
+  background-color: transparent;
+  text-align: center;
+  letter-spacing: 0.0625rem;
+}
+.header .top-section .top-menu .megamenu > li > a.selected, .header .top-section .top-menu .megamenu > li > .selected.button-to-link {
+  background-color: transparent;
+  color: #d04d00;
+}
+.header .top-section .top-menu .megamenu > li:hover .megamenu-subcategory {
+  opacity: 1;
+  visibility: visible;
+}
+.header .top-section .top-menu .megamenu > li:hover > a, .header .top-section .top-menu .megamenu > li:hover > .button-to-link {
+  background-color: transparent;
+}
+.header .top-section .top-menu .megamenu .megamenu-subcategory {
+  position: absolute;
+  background-color: #dad2c1;
+  margin: 0;
+  z-index: 100;
+  width: 100%;
+  left: 0;
+  padding: 0.25rem;
+  padding-bottom: 0;
+  opacity: 0.0;
+  border-bottom: 0.35rem solid #d04d00;
+  display: block;
+  visibility: hidden;
+  box-shadow: 0 2px 5px rgba(100, 100, 100, 0.8);
+  transition: all 0.2s cubic-bezier(0.41, 0.85, 0.34, 1);
+  transition-delay: 0.6s;
+    /* Few megamenus can be closed on this element's click event.
+   Javascript for this functionality is missing.
+*/
+}
+.header .top-section .top-menu .megamenu .megamenu-subcategory .row .submenuBlock {
+  width: 100%;
+}
+.header .top-section .top-menu .megamenu .megamenu-subcategory .megamenu-subcategory-list-panel {
+  margin-top: 0.25rem;
+  border-right: 1px solid #EEECE5;
+}
+.header .top-section .top-menu .megamenu .megamenu-subcategory .megamenu-subcategory-list-panel.submenuBlock-column {
+  float: left;
+  padding: 0 1rem;
+}
+.header .top-section .top-menu .megamenu .megamenu-subcategory .megamenu-subcategory-list-panel:last-child {
+  border-right: none;
+}
+.header .top-section .top-menu .megamenu .megamenu-subcategory .megamenu-subcategory-list-panel [class*="column"] + [class*="column"]:last-child {
+  border-right: 0 none;
+}
+.header .top-section .top-menu .megamenu .megamenu-subcategory .megamenu-subcategory-list-panel h3 {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.625rem;
+  color: #ffffff;
+}
+.header .top-section .top-menu .megamenu .megamenu-subcategory .megamenu-subcategory-list-panel ul {
+  margin: 0;
+}
+.header .top-section .top-menu .megamenu .megamenu-subcategory .megamenu-subcategory-list-panel ul li {
+  line-height: 0.3125rem;
+  padding: 0 0 0.3125rem;
+}
+.header .top-section .top-menu .megamenu .megamenu-subcategory .megamenu-subcategory-list-panel ul li a, .header .top-section .top-menu .megamenu .megamenu-subcategory .megamenu-subcategory-list-panel ul li .button-to-link {
+  color: #ffffff;
+  line-height: 1.125rem;
+}
+.header .top-section .top-menu .megamenu .megamenu-subcategory .megamenu-subcategory-list-panel ul li a:hover, .header .top-section .top-menu .megamenu .megamenu-subcategory .megamenu-subcategory-list-panel ul li .button-to-link:hover {
+  color: #d04d00;
+}
+.header .top-section .top-menu .megamenu .megamenu-subcategory .megamenu-subcategory-list-panel .menu-view-all a, .header .top-section .top-menu .megamenu .megamenu-subcategory .megamenu-subcategory-list-panel .menu-view-all .button-to-link {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.header .top-section .top-menu .megamenu .megamenu-subcategory .megamenu-subcategory-list-panel .menu-view-all a:hover, .header .top-section .top-menu .megamenu .megamenu-subcategory .megamenu-subcategory-list-panel .menu-view-all .button-to-link:hover {
+  color: #d04d00;
+}
+.header .top-section .top-menu .megamenu > li:nth-child(3) .megamenu-subcategory {
+  /*display: block;*/
+}
+.header .top-section .top-menu .megamenu > li.mm-item .megamenu-subcategory {
+  transition: all 0.2s cubic-bezier(0.41, 0.85, 0.34, 1);
+  transition-delay: 0.8s;
+  width: auto;
+  box-shadow: 0 2px 5px rgba(100, 100, 100, 0.8);
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+}
+.header .top-section .top-menu .megamenu > li.mm-item:hover .megamenu-subcategory {
+  transition-duration: 0.4s;
+  visibility: visible;
+  opacity: 1;
+}
+.header .top-section .top-menu .megamenu > li.mm-item:hover > a, .header .top-section .top-menu .megamenu > li.mm-item:hover > .button-to-link {
+  background-color: #dad2c1;
+  color: #ffffff;
+}
+.header .top-section .top-menu .user-section {
+  min-height: 2rem;
+  /*Mini Cart*/
+}
+.header .top-section .top-menu .user-section a, .header .top-section .top-menu .user-section .button-to-link {
+  letter-spacing: 0.03rem;
+}
+.header .top-section .top-menu .user-section .sign-in {
+  float: left;
+  position: relative;
+  margin-top: 0.875rem;
+}
+.header .top-section .top-menu .user-section .sign-in:hover > a, .header .top-section .top-menu .user-section .sign-in:hover > .button-to-link {
+  background-image: url(/tea//ux/img/desktop/arrowdownbrown.png);
+  opacity: 0.5;
+  background-position: right 6px;
+}
+.header .top-section .top-menu .user-section .sign-in:hover > ul {
+  opacity: 1;
+  height: auto;
+  padding: 0.5rem;
+}
+.header .top-section .top-menu .user-section .sign-in > a, .header .top-section .top-menu .user-section .sign-in > .button-to-link {
+  color: #572700;
+  font-size: 0.625rem;
+  font-family: 'Tisa Sans Medium', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  padding-right: 0.625rem;
+  background-image: url(/tea//ux/img/desktop/arrowrightbrown.png);
+  background-position: right 4px;
+  background-repeat: no-repeat;
+  transition-delay: 0.3s;
+  display: block;
+  position: relative;
+  bottom: -2px;
+}
+.header .top-section .top-menu .user-section .sign-in > a + ul, .header .top-section .top-menu .user-section .sign-in > .button-to-link + ul {
+  padding: 0;
+  min-width: 10rem;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 140%;
+  background-color: #ffffff;
+  z-index: 6;
+  border: 1px solid #dad2c1;
+  height: 0;
+  transition-delay: 0.2s;
+}
+.header .top-section .top-menu .user-section .sign-in > a + ul:after, .header .top-section .top-menu .user-section .sign-in > .button-to-link + ul:after, .header .top-section .top-menu .user-section .sign-in > a + ul:before, .header .top-section .top-menu .user-section .sign-in > .button-to-link + ul:before {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.header .top-section .top-menu .user-section .sign-in > a + ul:after, .header .top-section .top-menu .user-section .sign-in > .button-to-link + ul:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-bottom-color: #dad2c1;
+  border-width: 5px;
+  margin-left: -45%;
+}
+.header .top-section .top-menu .user-section .sign-in > a + ul:before, .header .top-section .top-menu .user-section .sign-in > .button-to-link + ul:before {
+  border-color: rgba(194, 225, 245, 0);
+  border-bottom-color: #dad2c1;
+  border-width: 6px;
+  margin-left: -45%;
+}
+.header .top-section .top-menu .user-section .sign-in > a + ul li a, .header .top-section .top-menu .user-section .sign-in > .button-to-link + ul li a, .header .top-section .top-menu .user-section .sign-in > a + ul li .button-to-link, .header .top-section .top-menu .user-section .sign-in > .button-to-link + ul li .button-to-link {
+  font-size: 0.625rem;
+  font-family: "Tisa Sans";
+}
+.header .top-section .top-menu .user-section .cart-container {
+  float: right;
+  margin-top: 0.875rem;
+}
+.header .top-section .top-menu .user-section .cart-container:hover .cart-trigger {
+  background-image: url(/tea//ux/img/desktop/arrowdownbrown.png);
+  background-position: right 2px;
+}
+.header .top-section .top-menu .user-section .cart-container a, .header .top-section .top-menu .user-section .cart-container .button-to-link {
+  display: inline;
+  font-size: 0.625rem;
+}
+.header .top-section .top-menu .user-section .cart-container .cart-trigger {
+  color: #572700;
+  font-size: 0.625rem;
+  font-family: 'Tisa Sans Medium', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  padding-right: 0.5rem;
+  margin-right: 0.375rem;
+  background-image: url(/tea//ux/img/desktop/arrowrightbrown.png);
+  background-position: right 0px;
+  background-repeat: no-repeat;
+}
+.header .top-section .top-menu .user-section .cart-container .cart-items {
+  color: #d04d00;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart {
+  position: absolute;
+  display: none;
+  top: 2.5rem;
+  right: 0;
+  background-color: #ffffff;
+  width: 31.25rem;
+  padding: 0.625rem 0.625rem 0.9375rem;
+  color: #000;
+  z-index: 10;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-header {
+  padding: 0.4375rem 0 0.625rem;
+  font-weight: bold;
+  color: #E0645A;
+  font-size: 0.75rem;
+  border-bottom: 1px solid #572700;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .cart-close {
+  float: right;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list {
+  max-height: 500px;
+}
+.header .top-section .top-menu .user-section .cart-container .minicart .minicart-list .items-wrapper {
+  max-height: 350px;
+  overflow-y: auto;
+}
+.header .top-section .top-menu .mobile-trigger .icon {
+  background-image: url("/tea//ux/img/mobile/menu.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  padding: 1.375rem 1.375rem;
+}
+.header .top-section .top-menu .free-shipping-message {
+  font-family: 'Tisa Sans Medium', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  color: #572700;
+  margin-top: 0.75rem;
+}
+.header .middle-section .slogan {
+  margin-top: 0.6875rem;
+  font-family: 'Tisa Medium';
+  letter-spacing: 0.04rem;
+}
+.header .bottom-section .starter > .row {
+  background-color: #efefef;
+  padding: 0.25rem 0 !important;
+  background-image: url(/tea//ux/themes/main/common/img/promobg.png);
+  background-repeat: repeat-x;
+}
+.header .bottom-section .mobile-menu-container {
+  position: relative;
+}
+.header .bottom-section .mobile-menu-container .menu-mobile {
+  top: 0;
+}
+.header.sticky {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  background-color: rgba(254, 254, 254, 0.89);
+  -webkit-box-shadow: 2px 0 5px 0 #ccc;
+  -moz-box-shadow: 2px 0 5px 0 #ccc;
+  box-shadow: 2px 0 5px 0 #ccc;
+}
+.header .search-query {
+  margin: 0;
+  margin-top: 0.875rem;
+  height: 1.5625rem;
+  font-size: 0.75rem;
+  font-family: 'Tisa Sans Medium', Arial, Helvetica, sans-serif;
+}
+.header .search-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  background-image: url("/tea//ux/img/desktop/search.png");
+  height: 1.5625rem;
+  padding: 0;
+}
+
+.print-header {
+  display: none;
+}
+
+@media print {
+  .header .overtop-section, .header .top-section, .header .middle-section, .header .bottom-section {
+    display: none;
+  }
+
+  .print-header {
+    background-color: #333 !important;
+    max-width: 64rem;
+    padding: 1rem;
+    margin: 0 auto;
+    display: block;
+  }
+  .print-header h1 {
+    display: block;
+    background-color: #333 !important;
+  }
+}
+
+/*-------
+Footer
+-------=*/
+.footer {
+  padding: 0;
+  /* Top section*/
+  /* This sections is optional: */
+  /* Middle section*/
+ /* This sections has the next elements:
+      -sitemap
+      -contact information
+      -social links
+      -Newsletter subscribe(opt)
+*/
+  /* Bottom section */
+ /* This section has the next elements:
+      -Terms & conditions
+      -Privacy Policy
+      -Copyright
+*/
+}
+.footer .top-section .starter > .row {
+  padding: 1rem 0;
+  border-top: 1px solid #dad2c1;
+  border-bottom: 1px solid #dad2c1;
+}
+.footer .top-section .starter > .row .sign-message-1 {
+  color: #572700;
+  letter-spacing: 0.04rem;
+  font-family: 'Tisa Sans Medium';
+}
+.footer .top-section .starter > .row .sign-message-2 {
+  color: #572700;
+  font-family: 'Tisa Sans';
+}
+.footer .top-section .starter > .row .email-query {
+  position: relative;
+  top: 0.375rem;
+  font-size: 0.625rem;
+  letter-spacing: 0.03rem;
+  padding: 0.5rem 5px;
+}
+.footer .top-section .starter > .row .email-sign-up-button {
+  background-image: url(/tea//ux/img/desktop/arrowrightlightbrown.png);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  position: absolute;
+  padding: 0.75rem 0.625rem;
+  top: 0.4375rem;
+  right: 0.5rem;
+  background-position: center;
+}
+.footer .top-section .starter > .row .social-icons a, .footer .top-section .starter > .row .social-icons .button-to-link {
+  display: block;
+  float: right;
+  margin-left: 1rem;
+  margin-top: 0.5625rem;
+}
+.footer .middle-section {
+  background-color: transparent;
+  padding-top: 1.875rem;
+}
+.footer .middle-section h4 {
+  color: #572700;
+  margin-bottom: 1.25rem;
+}
+.footer .middle-section .footer-items {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #dad2c1;
+}
+.footer .middle-section .footer-items .columns {
+  border-left: 1px solid #dad2c1;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.footer .middle-section .footer-items .columns:first-child {
+  border: none;
+}
+.footer .middle-section .footer-items .columns h6 {
+  text-align: center;
+  font-family: "Tisa Sans Medium";
+  letter-spacing: 0.06rem;
+  font-size: 0.75rem;
+}
+.footer .middle-section .footer-items .columns a, .footer .middle-section .footer-items .columns .button-to-link {
+  display: block;
+  color: #572700;
+}
+.footer .middle-section .footer-items .columns a img, .footer .middle-section .footer-items .columns .button-to-link img {
+  display: block;
+  margin: 0 auto;
+}
+.footer .middle-section .footer-items.regular .columns h6 {
+  text-align: left;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-family: "Tisa Sans Medium";
+}
+.footer .middle-section .footer-items.regular .columns ul {
+  margin-top: 0.3rem;
+}
+.footer .middle-section .footer-items.regular .columns ul a, .footer .middle-section .footer-items.regular .columns ul .button-to-link {
+  font-size: 0.625rem;
+  line-height: 1.3rem;
+}
+
+/*
+Breakpoint Fixes
+*/
+/*Medium*/
+/*
+This css works on tablet resolution
+and modifies all sections across
+header and footer
+*/
+@media only screen and (max-width: 64rem) {
+  .header .top-section .top-logo {
+    width: 14%;
+  }
+  .header .top-section .top-menu {
+    width: 86%;
+  }
+  .header .top-section .top-menu .megamenu {
+    margin-left: 0;
+  }
+
+  /* Account Menu for mobile */
+  .account-menu-mobile {
+    display: none;
+    width: 30%;
+    top: -4.25rem;
+    right: -110%;
+  }
+
+  /* Checkout Header */
+  .back-checkout {
+    margin-top: 0.375rem !important;
+  }
+
+  /*Footer*/
+  /* Middle section*/
+  .footer .middle-section .footer-items .columns {
+    border-right: none;
+  }
+}
+@media only screen and (max-width: 64rem) and (orientation: portrait) {
+  .header .top-section .top-menu .megamenu {
+    margin-top: 2.875rem;
+  }
+  .header .top-section .top-menu .megamenu > li > a, .header .top-section .top-menu .megamenu > li > .button-to-link {
+    padding-right: 10px;
+    margin: 0;
+  }
+}
+/*Small*/
+/*
+This css works on mobile resolution
+and modifies all sections across
+header and footer
+*/
+@media only screen and (max-width: 47.94rem) {
+  .header {
+    padding-top: 0;
+    /* Menu for mobile */
+    /* Checkout Header */
+  }
+  .header .top-section .top-logo {
+    width: 14%;
+  }
+  .header .top-section .top-menu {
+    width: 86%;
+  }
+  .header .top-section .cart-container .cart-trigger-mobile {
+    padding: 0.5rem 1rem;
+    position: relative;
+    top: -0.1875rem;
+    float: right;
+  }
+  .header .top-section .cart-container .cart-trigger-mobile .cart-icon {
+    background-image: url(/tea//ux/img/desktop/cart.png);
+    display: block;
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+  .header .top-section .cart-container .cart-trigger-mobile .cart-qty {
+    position: absolute;
+    top: 0.8125rem;
+    left: 1.8125rem;
+    color: #9b8b81;
+    font-weight: bold;
+  }
+  .header .megamenu {
+    display: none !important;
+  }
+  .header .menu-mobile {
+    width: 55%;
+    top: -4.25rem;
+    right: -100%;
+  }
+  .header .menu-mobile .search-query {
+    width: 90%;
+  }
+  .header .menu-mobile .search-button {
+    right: 10%;
+  }
+  .header .back-checkout {
+    margin-top: 0.625rem !important;
+  }
+
+  /* Footer */
+  /* Top section*/
+  /*Middle*/
+  .footer .top-section .starter > .row .social-icons {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    float: none;
+  }
+  .footer .top-section .starter > .row .social-icons a, .footer .top-section .starter > .row .social-icons .button-to-link {
+    float: left;
+    width: 25%;
+    margin: 0;
+    margin-top: 0.625rem;
+    text-align: center;
+  }
+  .footer .middle-section {
+    padding-top: 0;
+  }
+  .footer .middle-section .footer-items.regular .columns {
+    padding: 0 !important;
+    min-height: auto;
+  }
+  .footer .middle-section .footer-items.regular .columns:first-child h6 {
+    border-top: none;
+  }
+  .footer .middle-section .footer-items.regular .columns h6 {
+    margin: 0;
+    padding-top: 1rem;
+    padding-left: 0.75rem;
+    border-top: 1px solid #dad2c1;
+    position: relative;
+    text-transform: uppercase;
+  }
+  .footer .middle-section .footer-items.regular .columns h6:after {
+    content: "-";
+    position: absolute;
+    right: 1.25rem;
+  }
+  .footer .middle-section .footer-items.regular .columns h6.reduced:after {
+    content: "+";
+  }
+  .footer .middle-section .footer-items.regular .columns ul {
+    display: none;
+  }
+  .footer .middle-section .footer-items.regular .columns ul li {
+    padding-left: 10%;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    border-top: 1px solid #dad2c1;
+  }
+  .footer .middle-section .footer-items.regular .columns ul li a, .footer .middle-section .footer-items.regular .columns ul li .button-to-link {
+    font-size: 0.875rem;
+    font-weight: bold;
+  }
+}
+@media print {
+  .footer .middle-section {
+    display: none;
+  }
+  .footer .bottom-section .columns.small-12.medium-4.large-4, .footer .bottom-section .text-right.p0.pt5.pc-4.show-for-medium-up {
+    display: none;
+  }
+}
+/* Homepage slider */
+#home-slideshow {
+  margin-bottom: 1.25rem;
+}
+#home-slideshow .owl-controls {
+  position: static;
+}
+#home-slideshow .owl-pagination {
+  display: block;
+  padding: 0.125rem 0 0;
+}
+#home-slideshow .owl-controls .owl-page span {
+  background: #dad2c1;
+  opacity: 1;
+}
+#home-slideshow .owl-controls .owl-page.active span {
+  background: #572700;
+}
+#home-slideshow .owl-controls .owl-buttons {
+  position: inherit;
+}
+#home-slideshow .owl-controls .owl-buttons .owl-prev {
+  background: url(/tea//ux/img/desktop/arrowleftgray.png) center center no-repeat rgba(255, 255, 255, 0.8);
+  left: 0;
+}
+#home-slideshow .owl-controls .owl-buttons .owl-prev:hover {
+  background-image: url(/tea//ux/img/desktop/arrowleftblue.png);
+}
+#home-slideshow .owl-controls .owl-buttons .owl-next {
+  background: url(/tea//ux/img/desktop/arrowrightgray.png) center center no-repeat rgba(255, 255, 255, 0.8);
+  right: 0;
+}
+#home-slideshow .owl-controls .owl-buttons .owl-next:hover {
+  background-image: url(/tea//ux/img/desktop/arrowrightblue.png);
+}
+
+.home-slider {
+  position: relative;
+  background: white;
+  background: -moz-linear-gradient(top, white 0%, #dfdfdf 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(100%, #dfdfdf));
+  background: -webkit-linear-gradient(top, white 0%, #dfdfdf 100%);
+  background: -o-linear-gradient(top, white 0%, #dfdfdf 100%);
+  background: -ms-linear-gradient(top, white 0%, #dfdfdf 100%);
+  background: linear-gradient(to bottom, white 0%, #dfdfdf 100%);
+}
+.home-slider .slider-information {
+  position: absolute;
+  top: 75%;
+  left: 44%;
+}
+.home-slider .slider-information button {
+  padding: 0.625rem 1.25rem;
+  position: absolute;
+  top: 30%;
+  left: 70%;
+}
+
+.shop-by-menu-mobile {
+  width: 100%;
+}
+.shop-by-menu-mobile li {
+  border-bottom: 1px solid #572700;
+  padding: 0.875rem 0;
+  margin-bottom: 0.25rem;
+  background-image: url("/ux/img/mobile/arrowrightblue.png");
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  padding-left: 1.25rem;
+}
+
+.sub-category-item .name {
+  display: block;
+  text-align: center;
+  margin: 0.625rem 0;
+  padding: 0 2%;
+}
+.sub-category-item .description {
+  text-align: center;
+  margin-bottom: 0.625rem;
+  padding: 0 2%;
+}
+
+.category-item .name {
+  text-align: right;
+  display: block;
+  margin-bottom: 1px;
+}
+
+.recently-viewed {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.generic-slider {
+  margin-bottom: 1.25rem;
+}
+.generic-slider .owl-controls {
+  position: static;
+}
+.generic-slider .owl-pagination {
+  display: block;
+  padding: 0.125rem 0 0;
+}
+.generic-slider .owl-controls .owl-page span {
+  background: #dad2c1;
+  opacity: 1;
+}
+.generic-slider .owl-controls .owl-page.active span {
+  background: #572700;
+}
+.generic-slider .owl-controls .owl-buttons {
+  position: inherit;
+}
+.generic-slider .owl-controls .owl-buttons .owl-prev {
+  background: url(/tea//ux/img/desktop/arrowleftgray.png) center center no-repeat rgba(255, 255, 255, 0.8);
+  left: -4%;
+}
+.generic-slider .owl-controls .owl-buttons .owl-prev:hover {
+  background-image: url(/tea//ux/img/desktop/arrowleftblue.png);
+}
+.generic-slider .owl-controls .owl-buttons .owl-next {
+  background: url(/tea//ux/img/desktop/arrowrightgray.png) center center no-repeat rgba(255, 255, 255, 0.8);
+  right: -4%;
+}
+.generic-slider .owl-controls .owl-buttons .owl-next:hover {
+  background-image: url(/tea//ux/img/desktop/arrowrightblue.png);
+}
+
+@media only screen and (max-width: 64rem) {
+  #brand-slider .item {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 47.94rem) {
+  .home-slider .slider-information {
+    position: static;
+  }
+  .home-slider .slider-information button {
+    top: 20%;
+    left: 60%;
+    padding: 0 0.75rem;
+  }
+
+  .section-header {
+    text-align: left;
+  }
+  .section-header:before {
+    content: "";
+    border-top: none;
+  }
+  .section-header span {
+    color: #c34c29;
+    z-index: 2;
+  }
+}
+.first-visitor-modal {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  top: 100px;
+  background: #572700;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 0 0 5px rgba(0, 120, 160, 0.5);
+  padding: 0;
+  max-width: 580px;
+}
+.first-visitor-modal * {
+  color: #ffffff;
+}
+.first-visitor-modal .modal-top-bgc {
+  display: none;
+}
+.first-visitor-modal .errors > p {
+  display: inline-block;
+}
+.first-visitor-modal .errors:before {
+  content: "!";
+  display: inline-block;
+  margin-right: 5px;
+  background: #ffffff;
+  color: #ff0033;
+  border: #ff0033 solid 2px;
+  border-radius: 100%;
+  padding: 5px;
+  line-height: .4rem;
+}
+.first-visitor-modal .errors:empty:before {
+  display: none;
+}
+.first-visitor-modal .close-reveal-modal {
+  font-size: 2rem;
+  font-weight: lighter;
+  color: #0078a0;
+  background: #ffffff;
+  border-radius: 100%;
+  padding: 7px;
+  line-height: 1rem;
+  top: -15px;
+  right: -20px;
+}
+.first-visitor-modal .head {
+  background: #006184;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: #005c82 solid 5px;
+}
+.first-visitor-modal .head h2, .first-visitor-modal .head .section-header span, .section-header .first-visitor-modal .head span {
+  display: inline-block;
+  margin: 0;
+  font-size: 1.7rem;
+  font-style: initial;
+  font-weight: bold;
+}
+.first-visitor-modal .overlay-big-icon {
+  padding-top: 1rem;
+  text-align: center;
+}
+.first-visitor-modal .agree {
+  position: relative;
+  font-size: .8125rem;
+  max-width: 130px;
+  top: .6rem;
+}
+.first-visitor-modal input[type=button] {
+  min-width: 160px;
+}
+
+@media only screen and (max-width: 47.94rem) {
+  .first-visitor-modal .close-reveal-modal {
+    top: .5rem;
+    right: .5rem;
+  }
+  .first-visitor-modal .head h2, .first-visitor-modal .head .section-header span, .section-header .first-visitor-modal .head span {
+    padding-top: 2rem;
+  }
+}
+.category-listing {
+  margin-top: 0.625rem;
+  margin-bottom: 1.25rem;
+}
+.category-listing li {
+  margin-bottom: 0.9375rem;
+}
+.category-listing li a, .category-listing li .button-to-link {
+  color: #9b8b81;
+}
+
+.search-result-message {
+  margin-top: 1.875rem;
+  font-size: 1.875rem;
+  line-height: 1.875rem;
+}
+
+.did-you-mean-message {
+  border: 1px solid #EEECE5;
+  padding: 1rem 1rem 1rem 2.5rem;
+  background-image: url("/tea//ux/img/desktop/infoicon.png");
+  background-repeat: no-repeat;
+  background-position: 10px 50%;
+}
